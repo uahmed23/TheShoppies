@@ -7,29 +7,29 @@ function Movies() {
     const { movies, fetchMovies, totalResults, nominations, searchString, setSearchString } = useContext(Context)
     const [page, setPage] = useState(1);
     const headerText = "5 movie nomination limit reached";
-    useEffect(() => {
-        const header = document.getElementById("limitbanner");
-        const line = document.getElementById("bannerline");
+    // useEffect(() => {
+    //     const header = document.getElementById("limitbanner");
+    //     const line = document.getElementById("bannerline");
 
-        const sticky = line.offsetTop;
-        const scrollCallBack = window.addEventListener("scroll", () => {
-            if (nominations.length > 4) {
-                if (window.pageYOffset > sticky) {
-                    header.classList.add("sticky");
-                    header.classList.remove("invisible");
+    //     const sticky = line.offsetTop;
+    //     const scrollCallBack = window.addEventListener("scroll", () => {
+    //         if (nominations.length > 4) {
+    //             if (window.pageYOffset > sticky) {
+    //                 header.classList.add("sticky");
+    //                 header.classList.remove("invisible");
 
-                } else {
-                    header.classList.add("invisible");
-                }
-            }
-            else {
-                header.classList.add("invisible");
-            }
-        });
-        return () => {
-            window.removeEventListener("scroll", scrollCallBack);
-        };
-    }, [nominations]);
+    //             } else {
+    //                 header.classList.add("invisible");
+    //             }
+    //         }
+    //         else {
+    //             header.classList.add("invisible");
+    //         }
+    //     });
+    //     return () => {
+    //         window.removeEventListener("scroll", scrollCallBack);
+    //     };
+    // }, [nominations]);
 
     const delayedQuery = useCallback(_.debounce(q => fetchMovies(q, page), 500), []);
 
@@ -76,10 +76,10 @@ function Movies() {
                     {nominations && nominations.length > 4 ? <h4><i className="ri-alert-line banner-full"></i> nomination limit reached (5 nominees max.)</h4> : null}
                 </div>
             </div>
-            <div id="bannerline"></div>
+            {/* <div id="bannerline"></div>
             <header id="limitbanner" className="banner invisible">
                 {headerText}
-            </header>
+            </header> */}
             <main className="movies">
                 {!movies || movies.length < 1 ? <h3>   No matching movie title found</h3> : moviePosters}
             </main>
