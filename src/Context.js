@@ -21,7 +21,7 @@ function ContextProvider({ children }) {
     }, [])
 
     async function fetchMovies(query, pageNum) {
-        let data = await axios.get(`http://www.omdbapi.com/?apikey=5209986e&s=${query}&page=${pageNum}&type=movie`)
+        let data = await axios.get(`https://www.omdbapi.com/?apikey=5209986e&s=${query}&page=${pageNum}&type=movie`)
         let result = data.data.Search ? data.data.Search : []
         let totalMovies = data.data.totalResults ? data.data.totalResults : 0
         setTotalResults(totalMovies)
