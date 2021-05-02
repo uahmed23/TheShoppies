@@ -59,7 +59,7 @@ function Movies() {
     console.log(movies);
     return (
         <>
-            <div className="pageInfo">
+            {/* <div className="pageInfo">
                 <p>page {page} out of {Math.floor(totalResults / 10) + 1}</p>
                 <a href='#' onClick={previousPage} className="previous">&#8249;</a>
                 <a href='#' onClick={nextPage} className="next">&#8250;</a>
@@ -75,7 +75,7 @@ function Movies() {
                     {movies && movies.length > 0 && nominations && nominations.length < 5 ? <h4>Click <i className="ri-star-line banner-star"></i> on a poster to nominate a movie</h4> : null}
                     {nominations && nominations.length > 4 ? <h4><i className="ri-alert-line banner-full"></i> nomination limit reached (5 nominees max.)</h4> : null}
                 </div>
-            </div>
+            </div> */}
             {/* <div id="bannerline"></div>
             <header id="limitbanner" className="banner invisible">
                 {headerText}
