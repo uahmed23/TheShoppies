@@ -18,9 +18,6 @@ function Movies() {
                     header.classList.add("sticky");
                     header.classList.remove("invisible");
 
-                    // if (headerText !== fixedText) {
-                    //     setHeaderText(fixedText);
-                    // }
                 } else {
                     header.classList.add("invisible");
                 }
@@ -62,9 +59,6 @@ function Movies() {
     console.log(movies);
     return (
         <>
-            {/* <header id="myHeader" className="banner">
-                {headerText}
-            </header> */}
             <div className="pageInfo">
                 <p>page {page} out of {Math.floor(totalResults / 10) + 1}</p>
                 <a href='#' onClick={previousPage} className="previous">&#8249;</a>
